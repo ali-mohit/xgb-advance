@@ -14,9 +14,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/jezek/xgb"
-	"github.com/jezek/xgb/randr"
-	"github.com/jezek/xgb/xproto"
+	"github.com/ali-mohit/xgb-advance"
+	"github.com/ali-mohit/xgb-advance/randr"
+	"github.com/ali-mohit/xgb-advance/xproto"
 )
 
 func main() {

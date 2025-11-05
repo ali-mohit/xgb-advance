@@ -9,8 +9,8 @@ import (
 	"runtime/pprof"
 	"time"
 
-	"github.com/jezek/xgb"
-	"github.com/jezek/xgb/xproto"
+	"github.com/ali-mohit/xgb-advance"
+	"github.com/ali-mohit/xgb-advance/xproto"
 )
 
 var (

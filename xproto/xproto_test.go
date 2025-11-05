@@ -26,7 +26,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/jezek/xgb"
+	"github.com/ali-mohit/xgb-advance"
 )
 
 // The X connection used throughout testing.
