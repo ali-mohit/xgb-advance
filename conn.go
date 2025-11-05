@@ -42,7 +42,7 @@ func (c *Conn) connectNet(netConn net.Conn) error {
 // The hexCode parameter should be a 32-character hex string representing the MIT-MAGIC-COOKIE-1 authentication data.
 func (c *Conn) connectNetViaHexCode(netConn net.Conn, hexCode string) error {
 	c.conn = netConn
-	return c.postConnect("")
+	return c.postConnect(hexCode)
 }
 
 // do the postConnect action after Conn get it's underly net.Conn
