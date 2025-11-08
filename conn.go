@@ -57,6 +57,11 @@ func (c *Conn) postConnect(cookieHex string) error {
 		authName, authData, err = readAuthority(c.host, c.display)
 	} else {
 		authName, authData, err = readAuthorityFromCookieHex(cookieHex)
+		if err != nil {
+			// Early return with the magic cookie decoding error description.
+			// Server using magic cookie is surely not allowing to connect without authentication.
+			return fmt.Errorf("failed to use provided cookie: %w", err)
+		}
 	}
 
 	noauth := false
