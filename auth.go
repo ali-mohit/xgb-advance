@@ -94,16 +94,16 @@ func readAuthority(hostname, display string) (
 // Returns an error if the hex string is empty, invalid, or not exactly 16 bytes.
 func readAuthorityUsingHexCode(cookieHex string) (name string, data []byte, err error) {
 	if cookieHex == "" {
-		return "", []byte{}, errors.New("cookie hex string is required")
+		return "", nil, errors.New("cookie hex string is required")
 	}
 
 	authData, err := hex.DecodeString(cookieHex)
 	if err != nil {
-		return "", []byte{}, fmt.Errorf("invalid cookie hex: %v", err)
+		return "", nil, fmt.Errorf("invalid cookie hex: %v", err)
 	}
 
 	if len(authData) != 16 {
-		return "", []byte{}, errors.New("cookie must be 16 bytes (32 hex chars)")
+		return "", nil, errors.New("cookie must be 16 bytes (32 hex chars)")
 	}
 
 	return "MIT-MAGIC-COOKIE-1", authData, nil
